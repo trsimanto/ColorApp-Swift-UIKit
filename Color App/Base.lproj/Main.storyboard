@@ -16,18 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7m-qW-Ldy">
-                                <rect key="frame" x="165" y="441" width="151" height="138"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GTR-db-lPs">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="EMr-g6-5xl">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EMr-g6-5xl" id="usR-2D-6oO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="tempButton:" destination="TW8-nq-DYH" eventType="touchUpInside" id="NYo-mS-yxh"/>
+                                    <outlet property="dataSource" destination="TW8-nq-DYH" id="aHb-b8-BZP"/>
+                                    <outlet property="delegate" destination="TW8-nq-DYH" id="zMH-AK-Uwm"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xzR-Fo-xfA"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GTR-db-lPs" firstAttribute="top" secondItem="xzR-Fo-xfA" secondAttribute="top" id="4pl-kq-Luz"/>
+                            <constraint firstItem="GTR-db-lPs" firstAttribute="leading" secondItem="xzR-Fo-xfA" secondAttribute="leading" id="8wq-cl-uuZ"/>
+                            <constraint firstItem="xzR-Fo-xfA" firstAttribute="trailing" secondItem="GTR-db-lPs" secondAttribute="trailing" id="LGN-rJ-BZT"/>
+                            <constraint firstItem="xzR-Fo-xfA" firstAttribute="bottom" secondItem="GTR-db-lPs" secondAttribute="bottom" id="uQf-02-pI3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Colors" id="Taj-lU-Pla"/>
                     <connections>
@@ -76,9 +91,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
